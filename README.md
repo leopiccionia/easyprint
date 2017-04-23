@@ -52,14 +52,14 @@ public static void println(Object... args)
 Wrapper for `System.out.println(new EasyString(Object... args))`.
 
 ```java
-public static void repeat(String string, int times)
+public static EasyString repeat(String string, int times)
 ```
 Repeats `string` `times` times. For example, `repeat("*", 5)` returns `*****`.
 
 ```java
 public String toString()
 ```
-Overwritten for returning `String` built.
+Returns `String` built.
 
 ## TODO
 
