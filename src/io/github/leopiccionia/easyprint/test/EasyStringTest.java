@@ -1,5 +1,6 @@
-package io.github.leopiccionia.easyprint;
+package io.github.leopiccionia.easyprint.test;
 
+import io.github.leopiccionia.easyprint.EasyString;
 import junit.framework.*;
 
 public class EasyStringTest extends TestCase{

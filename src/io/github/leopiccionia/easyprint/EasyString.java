@@ -4,6 +4,8 @@
 
 package io.github.leopiccionia.easyprint;
 
+import java.io.IOException;
+import java.io.Writer;
 import java.lang.StringBuilder;
 
 public class EasyString{
@@ -57,5 +59,27 @@ public class EasyString{
     
     public String toString(){
         return this.value.toString();
+    }
+    
+    public Writer write(Writer writer, Object... args){
+    	EasyString temp = new EasyString(args);
+    	try{
+    		writer.append(temp.toString());
+    	}
+    	catch(IOException e){
+    		System.err.println("EasyString threw IOException: " + e.getMessage());
+    	}
+    	return writer;
+    }
+    
+    public Writer writeln(Writer writer, Object... args){
+    	EasyString temp = new EasyString(args, System.getProperty("line.separator"));
+    	try{
+    		writer.append(temp.toString());
+    	}
+    	catch(IOException e){
+    		System.err.println("EasyString threw IOException: " + e.getMessage());
+    	}
+    	return writer;
     }
 }
