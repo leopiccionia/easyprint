@@ -6,9 +6,10 @@ package io.github.leopiccionia.easyprint;
 
 import java.io.IOException;
 import java.io.Writer;
+import java.lang.CharSequence;
 import java.lang.StringBuilder;
 
-public class EasyString{
+public class EasyString implements CharSequence{
     
     private StringBuilder value;
 
@@ -31,6 +32,10 @@ public class EasyString{
         return this;
     }
 
+	public char charAt(int index){
+		return this.value.charAt(index);
+	}    
+    
     public static EasyString concat(String separator, Object... args){
         if(args.length == 0)
             return new EasyString();
@@ -40,6 +45,10 @@ public class EasyString{
             temp.value.append(String.valueOf((Object)args[i]));
         }
         return temp;
+    }
+    
+    public int length(){
+    	return this.value.length();
     }
 
     public static void print(Object... args){
@@ -56,6 +65,10 @@ public class EasyString{
     		temp.value.append(string);
     	return temp;
     }
+    
+	public CharSequence subSequence(int start, int end){
+		return this.value.subSequence(start, end);
+	}    
     
     public String toString(){
         return this.value.toString();

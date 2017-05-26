@@ -56,6 +56,23 @@ public static EasyString repeat(String string, int times)
 ```
 Repeats `string` `times` times. For example, `repeat("*", 5)` returns `*****`.
 
+#### from `java.lang.CharSequence`
+
+```java
+public char charArt(int index)
+```
+Returns the `index`-th `char` from `CharSequence` built.
+
+```java
+public int length()
+```
+Returns the length of `CharSequence` built.
+
+```java
+public CharSequence subSequence(int start, int end)
+```
+Returns the subsquence [`start`,`end - 1`] from `CharSequence` built.
+
 ```java
 public String toString()
 ```
@@ -68,5 +85,6 @@ Returns `String` built.
 - [ ] File writing, similarly to `print()` and `println()`
 - [ ] StringBuffer wrapper
 - [ ] Implementing useful interfaces
+	- [X] CharSequence
 - [ ] Javadoc
 - [ ] Benchmark against other alternatives
